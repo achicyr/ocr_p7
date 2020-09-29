@@ -1,0 +1,43 @@
+{
+     "home": {
+          "jumbotron":{
+               "h1": "Welcome to the Boulder Bike Tour !",
+               "p": "Follow us on social networks:",
+               "row__rs": ["fb","instam","tw"],
+               "card": {
+                    "header": ["The event will start in:"],
+                    "main": ["(We're: __i__)", 
+                         "__i__ Month, __i__ DAYS, __i__ HOURS, __i__ MIN, and __i__ SEC",
+                        "(The Tour starts: __i__, at 9 o'clock !)"
+                    ],
+                    "footer": ["Register now !"]
+               },
+          },
+          "texts": [
+               "Hurry up guy !", 
+               "The Boulder Bike Tour will start soon, and you have to subscribe now !",
+               "Here's a little description of this competition. You'll be seduced (trust me <3) and just subscribe without thinking ^^:",
+               "description..."
+          ]
+     },
+     "riders": {
+          
+     },
+     "map": {
+          
+     },
+     "flickr": {
+          "h1": "Appriciate bike memories with us !",
+          "carousel":["Add more photos"]
+     },
+     "contest": {
+          "h1": "Would you like to participate to the construction of the slogan for the tour bike this year ?",
+          "p":  "Just add your name, surname, email adress so that we can contact you if needed to announce that your slogan has been selected for example !!",
+          "p":  "No adds, no servey will be targetted to the email adress you fill here",
+          "form": {
+               "Enter your name": {},
+               "Enter your slogan proposition": {}
+          },
+          "h3": "Pationates proposals:"
+     }
+}

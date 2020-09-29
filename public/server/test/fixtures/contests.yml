@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  slogan: MyText
+  votes: 1
+
+two:
+  firstname: MyString
+  lastname: MyString
+  slogan: MyText
+  votes: 1
+
+<% 6.times do |i| %>
+contest_<%= i %>:
+  firstname: <%= "Firstname Nb#{i}" %>
+  lastname: <%= "Lastname Nb#{i}" %>
+  slogan: <%= "This is pretty sure the best slogan ever donya ?" %>
+  votes: <%= 0 %>
+<% end %>

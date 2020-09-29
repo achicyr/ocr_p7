@@ -1,0 +1,194 @@
+@import "./../../node_modules/bootstrap/scss/bootstrap.scss";
+// C:\Users\achic\myDesktop\RUBY\ocr_p7_bis\node_modules\bootstrap\scss\bootstrap.scss
+@import "./BEM/main.scss";
+/***********************************/
+/***********************************/
+/***********************************/
+/************base*******************/
+
+/***********************************/
+/***********************************/
+/************component**************/
+
+/***********************************/
+/***********************************/
+/************layouts****************/
+
+/***********************************/
+/***********************************/
+/************pages******************/
+
+/***********************************/
+/***********************************/
+/************themes*****************/
+
+/***********************************/
+/***********************************/
+/************utils******************/
+
+/***********************************/
+/***********************************/
+/************vendors****************/
+
+/***********************************/
+/***********************************/
+
+
+
+.abFull{position:absolute;top:0;left:0;bottom:0;right:0;}
+.margCenter{margin:0 auto;}
+
+/*********************************************************************************************************************************************************************/
+/*********************************************************************************************************************************************************************/
+ul.safe,ol.safe{margin:0;}
+/*********************************************************************************************************************************************************************/
+/*********************************************************************************************************************************************************************/
+body{
+  height: 100%;width: 100%;position: absolute;
+  &>div[id="root"]{
+    position: absolute;
+    top: 0;left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 4rem 0;
+    /*
+    &:before{
+      content:"";
+      position:absolute;bottom:0;left:0;width:700px;height:500px;
+      background: url(./imgs/bikers/biker_3.jpg) bottom right no-repeat;
+      z-index: -1;;transform: scaleX(-1);
+    }
+    &:after{
+      content:"";
+      position:absolute;bottom:0;right:0;width:700px;height:500px;
+      background: url(./imgs/bikers/biker_3.jpg) bottom right no-repeat;
+      z-index: -1;
+    }
+    */
+    &>*{position:fixed;
+    }
+    &>header{    
+      z-index: 100;
+      top: 0;
+      height:4rem;
+      border-bottom:solid;
+      nav.navbar{
+        z-index: 100;position:fixed;width:100%;border-bottom:1px solid;box-shadow:0 0 10px 1px;
+      }
+    }
+    &>nav{
+      z-index: 90;
+      display: flex;
+      justify-content: center;
+      top: 4rem;
+      left:2em;right:2em;
+      &>.breadcrumb{display:flex;justify-content:center;border:1px solid;border-top:0;}
+      .breadcrumb .active{}
+    }
+    &>main{
+      // &:not(#pound){padding:4rem 0 !important;}
+      overflow-y: scroll;      top:4rem;bottom:4rem;      left:0;right:0;
+      background: center / cover no-repeat  url("./imgs/fond1.jpg");
+      >*:not(hr){@extend .container;@extend .px-5;
+        margin: 0 auto;position:relative;padding: 1em 0;
+        background: rgba(200,200,200,.5);
+      }
+      &>*:first-child{margin-top:3em;}
+      &>*:last-child{margin-bottom:2em;}
+      &>h1,&>h2{@extend .text-center;}
+    }
+    &>footer{
+      bottom:0;
+      height: 4rem;
+      background: silver;
+      border-top:solid;
+    }
+  }
+  /*********************************************************************************************************************************************************************/
+  &.menu_,&.menu_home{
+    main{
+      /***JUMBOTRON***/
+      .card-text>b{font-size:2em;color:brown;}
+      .list-group a{transition: background .7s,color .4s;svg{font-size:3em;}}
+      .list-group a:hover{@extend .bg-primary;@extend .text-light;}
+      .jumbotron{position:relative;margin:0 auto;transition:box-shadow .4s;
+        h1{transition:font-size .4s}
+        &:hover{box-shadow: 0 0 5em 1em black;
+          h1{font-size:3.75rem;}
+          &::before{opacity:.5;}
+        }
+        &>*{position:relative;font-weight: bold;text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px blue;}
+      }
+      .jumbotron:before{@extend .abFull;transition:opacity .4s;content:"";background:url(./imgs/bikers/biker_4.jpg) center center no-repeat, #000;opacity:.75;}
+      /***************/
+      /***DECOUNTER***/
+      .decounter{opacity:.9}
+      /***************/
+      /***************/
+      /***DECOUNTER***/
+      .decounter{opacity:.9}
+      /***************/
+      /***************/
+      /***aticle***/
+      &>article{background: white;font-weight: bold;}
+      /***************/
+      
+
+    }
+  }
+  &.menu_gallery{
+    main{
+      background:white;
+      #galleryCarousel{
+        border-bottom:solid;
+        .carousel-indicators{position:absolute;bottom: -2.5rem;background:rgba(0,0,0,.5);}
+        .carousel-item>img{
+          // border-radius: 1em !important;
+          padding: 1em;
+          background: rgba(192,192,192,.5);
+        }
+        a[class^="carousel-control"]{
+          transition: background .4s, border .4s;
+          span{transition: color .4s;}
+        }
+        &:hover{
+          span.carousel-control-icons{
+            color:red;font-weight:bold;font-size:2em;
+          }
+          a[class^="carousel-control"]:hover{background: rgba(0,0,0,.5);
+            span{color:silver;}
+            &[class$="prev"]{border-right: 1px dotted red;}
+            &[class$="next"]{border-left: 1px dotted red;}
+          }
+        }
+      }
+    }
+  }
+  &.menu_contest{
+    ul.slogans{list-style: none;
+      &>li{@extend .container;transition: box-shadow .4s;
+        &:hover{box-shadow:0 0 10px 1px;}
+        background:whitesmoke;
+        .slogan{@extend .container;
+          border:solid;
+          background: silver;;
+        }
+      }
+    }
+  }
+  &.menu_rider{*
+    .card{transition: background .4s;
+      &:hover{background:white;}
+      .card-body{
+        h4{text-decoration:underline;
+          span{font-weight: 350;}
+        }
+      }
+      &>span{position:absolute;        right: 1rem;        color: antiquewhite;        background: black;        padding: 0 4px;        border-radius: 5px;}
+    }
+  }
+  &.menu_geo{
+  }
+}
+/*********************************************************************************************************************************************************************/
+/*********************************************************************************************************************************************************************/

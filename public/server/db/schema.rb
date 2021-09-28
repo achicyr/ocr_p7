@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_27_183105) do
-
-  create_table "contents", force: :cascade do |t|
-    t.string "elt"
-    t.text "content"
-    t.text "json"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_09_28_054146) do
 
   create_table "contests", force: :cascade do |t|
     t.string "firstname"
@@ -26,6 +18,14 @@ ActiveRecord::Schema.define(version: 2020_09_27_183105) do
     t.string "email"
     t.text "slogan", limit: 50
     t.integer "votes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "approuved"
+    t.integer "voted"
+  end
+
+  create_table "okoks", force: :cascade do |t|
+    t.string "attr"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

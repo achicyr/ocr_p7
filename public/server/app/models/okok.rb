@@ -1,0 +1,2 @@
+class Okok < ApplicationRecord
+end

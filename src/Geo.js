@@ -15,7 +15,7 @@ import {csvJSON} from "./components/vendor/tools"
                zoom: 11,
                data: []
           }
-          fetch(props.host || "http://localhost:7000/rider.csv").then(d=>d.text().then(r=>{
+          fetch("http://localhost:7000/rider.csv").then(d=>d.text().then(r=>{
                this.setState({data: csvJSON(r).map((item,j)=>{
                     let i = 0, key, tmp
                     for(key in item){

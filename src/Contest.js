@@ -1,5 +1,7 @@
 import React from 'react'
 import $ from "jquery";
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import {csvJSON} from "./components/vendor/tools"
 
 class Contest extends React.Component{
   constructor(p){
@@ -12,6 +14,9 @@ class Contest extends React.Component{
       slogans: ""
     }
     $('body').attr({'class': "menu_contest"})
+  }
+  componentDidMount(){
+
   }
   manageForm = (event) => {
     event.preventDefault()
@@ -43,26 +48,44 @@ class Contest extends React.Component{
   handleSlogan = (e) => {
     this.setState({slogan: e.target.value})
   }
+  test(e){
+    e.preventDefault()
+    // fetch("http://localhost:7000/contests").then(d=>d.json().then(r=>{
+    fetch("http://localhost:7000/contest_datas.json").then(d=>d.json().then(r=>{
+      console.log(r)
+      console.log(r)
+      alert(JSON.stringify(r))
+      return r
+    }))
+    console.log("okkkkk");   
+  }
   render(){
     console.log();
+    // alert(typeof this.state.slogans)
+    /*
     if(typeof this.state.slogans === "string")fetch("http://localhost:7000/contests.json").then((e)=>{
       e.json().then((e)=>{
         console.log(e);
-        this.setState({slogans: e.map((el,i)=>(
-          <li key={i}> 
-            <p>{el.firstname || "{firsnName}"} - {el.lastname || "{lastname}"}</p>
-            <p>{el.email || "{email}"}</p>
-            <p className="slogan">{el.slogan}</p>
-            <p><span>Votes: </span>
-              <button className="btn">
-                      <span className="badge badge-primary">{el.votes}</span>
-              </button>
-              <span className="float-right"><u><b>created at:</b></u> {el.created_at}</span>
-            </p>
-          </li>
-        ))})
+        alert(e.length)
+        if(e.length != 0){
+          alert('yoo')
+          this.setState({slogans: e.map((el,i)=>(
+            <li key={i}> 
+              <p>{el.firstname || "{firsnName}"} - {el.lastname || "{lastname}"}</p>
+              <p>{el.email || "{email}"}</p>
+              <p className="slogan">{el.slogan}</p>
+              <p><span>Votes: </span>
+                <button className="btn">
+                        <span className="badge badge-primary">{el.votes}</span>
+                </button>
+                <span className="float-right"><u><b>created at:</b></u> {el.created_at}</span>
+              </p>
+            </li>
+          ))})
+        }
       });
     })
+    */
     return(
       <>
         <h2>Would you like to participate to the construction of the slogan for the tour bike this year ?</h2>
@@ -94,6 +117,9 @@ class Contest extends React.Component{
         <article>
           <h3>Participants proposals:</h3>
           <div></div>
+          <form onSubmit={this.test} >
+            <button>launch proposals ?</button>
+          </form>
           <ul class="slogans">
             { this.state.slogans }
           </ul>

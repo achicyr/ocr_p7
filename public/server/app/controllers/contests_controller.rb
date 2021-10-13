@@ -5,12 +5,14 @@ class ContestsController < ApplicationController
   # GET /contests.json
   def index
     @contests = Contest.all
-    render json: @contests.to_json
+    msg = @contests.to_json
+    render json: msg
+    # render :json => msg
   end
 
-  # GET /contests/1
-  # GET /contests/1.json
+  # GET /contests_
   def show
+    
   end
 
   # GET /contests/new

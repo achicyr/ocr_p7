@@ -1,0 +1,8 @@
+https://docs.google.com/spreadsheets/d/1RQsIWvPdGxyqaH5K59fdcbUVxzjGqhh3fj6qXdDRz4M/edit#gid=1828382157
+
+STARTING THE PROJECT FROM CLONING THE REPO		
+install ruby	https://www.ruby-lang.org/en/documentation/installation/	sudo apt-get install ruby-full
+"you will maybe need to install gems manually 
+like sqlite3, or rails"	https://stackoverflow.com/questions/34171874/an-error-occurred-while-installing-sqlite3-1-3-11-and-bundler-cannot-continue	sudo apt-get install -y sqlite3 libsqlite3-dev
+install gems	https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run-the-application-locally	bundle install
+launch the server	https://learn.microsoft.com/fr-fr/azure/app-service/quickstart-ruby?tabs=cli#run-the-application-locally	bundle exec rails server

@@ -4,6 +4,7 @@
 /src/assets/imgs/*
 !/public/imgs/_.txt
 !/src/assets/imgs/_.txt
+/public/server/vendor/bundle/
 
 # dependencies
 /node_modules

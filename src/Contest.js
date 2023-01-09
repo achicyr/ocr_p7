@@ -11,12 +11,12 @@ class Contest extends React.Component{
       lastName: "",
       email: "",
       slogan: "",
-      slogans: ""
+      slogans: []
     }
     $('body').attr({'class': "menu_contest"})
   }
   componentDidMount(){
-
+    this.launch()
   }
   manageForm = (event) => {
     event.preventDefault()
@@ -48,16 +48,16 @@ class Contest extends React.Component{
   handleSlogan = (e) => {
     this.setState({slogan: e.target.value})
   }
-  test(e){
-    e.preventDefault()
+  launch = (e) => {
+    // e.preventDefault()
     // fetch("http://localhost:7000/contests").then(d=>d.json().then(r=>{
     fetch("http://localhost:7000/contest_datas.json").then(d=>d.json().then(r=>{
-      console.log(r)
-      console.log(r)
-      alert(JSON.stringify(r))
+      // console.log(r)
+      // alert(JSON.stringify(r))
+      this.setState({slogans: r.map(e=><li><div><span>{e.firstname}</span><span>{e.lastname}</span><span>{e.email}</span></div><p className="slogan">{e.slogan}</p></li>)})
+
       return r
     }))
-    console.log("okkkkk");   
   }
   render(){
     console.log();
@@ -92,6 +92,13 @@ class Contest extends React.Component{
         <p>Just add your name, surname, email adress so that we can contact you if needed to announce that your slogan has been selected for example !!</p>
         <p>No add, no servey will be targetted to the email adress you fill here</p>
         <hr className="mb-5"/>
+        <article>
+          <h3>Participants proposals:</h3>
+          <ul class="slogans">
+            { this.state.slogans }
+          </ul>
+        </article>
+        <hr className="mb-5"/>
         <form onSubmit={this.manageForm} method="POST">
           <input name="id" type="hidden" className="form-control" value="12"/>
           <div className="form-group">
@@ -113,17 +120,6 @@ class Contest extends React.Component{
           <hr/>
           <input type="submit"/>
         </form>
-        <hr/>
-        <article>
-          <h3>Participants proposals:</h3>
-          <div></div>
-          <form onSubmit={this.test} >
-            <button>launch proposals ?</button>
-          </form>
-          <ul class="slogans">
-            { this.state.slogans }
-          </ul>
-        </article>
       </>
     )
   }

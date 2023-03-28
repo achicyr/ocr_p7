@@ -54,7 +54,7 @@ class Contest extends React.Component{
     fetch("http://localhost:7000/contest_datas.json").then(d=>d.json().then(r=>{
       // console.log(r)
       // alert(JSON.stringify(r))
-      this.setState({slogans: r.map(e=><li><div><span>{e.firstname}</span><span>{e.lastname}</span><span>{e.email}</span></div><p className="slogan">{e.slogan}</p></li>)})
+      this.setState({slogans: r.map(e=><li>__u_y_uhu<div><span>{e.firstname}</span><span>{e.lastname}</span><span>{e.email}</span></div><p className="slogan">{e.slogan}</p></li>)})
 
       return r
     }))
